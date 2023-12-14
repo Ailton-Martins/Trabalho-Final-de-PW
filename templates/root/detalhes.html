@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}Detalhes do Produto{% endblock %}
+
+{% block principal %}
+
+<body class="d-flex flex-column min-vh-100">
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img id="preview" src="/static/img/produtos/{{ '{:04d}'.format(produto.id) }}.jpg"
+                    class="img-fluid">
+            </div>
+            <div class="col-md-8 mb-4">
+                <h1 class="display-4">{{ produto.nome }}</h1>
+                <h2 class="text-danger">R$ {{ produto.preco }}</h2>
+                <hr class="my-4">
+                <button class="btn btn-primary btn-lg">Comprar Agora!</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <p class="lead">Descrição:</p>
+                <p>{{ produto.descricao }}</p>
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}
